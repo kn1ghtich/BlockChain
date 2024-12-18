@@ -1,7 +1,6 @@
 package Assignment1;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 import static Assignment1.Block.mineBlock;
@@ -10,23 +9,17 @@ import static Assignment1.Block.validateBlockchain;
 public class Main {
     public static void main(String[] args) {
         List<Block> blockchain = new ArrayList<>();
+        List<Transaction> transactions = new ArrayList<>();
 
-        // Genesis block
-        List<Transaction> genesisTransactions = new ArrayList<>();
+        //Making transaction
         for (int i = 0; i < 10; i++) {
-            genesisTransactions.add(new Transaction("GenesisSender", "GenesisReceiver", i * 10));
+            transactions.add(new Transaction("Bauyrzhan", "Daniil", i * 10));
         }
-        Block genesisBlock = mineBlock("0", genesisTransactions);
-        blockchain.add(genesisBlock);
 
-        // Add more blocks
-        for (int i = 1; i <= 5; i++) {
-            List<Transaction> transactions = new ArrayList<>();
-            for (int j = 0; j < 10; j++) {
-                transactions.add(new Transaction("Sender" + i, "Receiver" + i, j * 5));
-            }
-            Block newBlock = mineBlock(blockchain.get(blockchain.size() - 1).hash, transactions);
-            blockchain.add(newBlock);
+        //Mining BlockChain
+        blockchain.add(Block.mineBlock("0", transactions));
+        for (int i = 0; i < 10; i++) {
+            blockchain.add(Block.mineBlock(blockchain.get(i).hash, transactions));
         }
 
         // Validate blockchain
@@ -40,6 +33,8 @@ public class Main {
             System.out.println("Merkle Root: " + block.merkleRoot);
             System.out.println();
         }
+
     }
 
 }
+
