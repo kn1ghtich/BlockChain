@@ -9,6 +9,8 @@ public class Main {
         List<Block> blockchain = new ArrayList<>();
         List<Transaction> transactions = new ArrayList<>();
 
+
+
         //Making transaction
         for (int i = 0; i < 10; i++) {
             transactions.add(new Transaction("Bauyrzhan", "Daniil", i * 10));

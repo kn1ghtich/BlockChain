@@ -14,6 +14,8 @@ public class Block {
     long timestamp;
     String hash = null;
 
+
+
     Block(String previousHash, String merkleRoot) {
         this.previousHash = previousHash;
         this.merkleRoot = merkleRoot;
