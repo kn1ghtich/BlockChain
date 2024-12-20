@@ -2,8 +2,6 @@ package Assignment1;
 
 import java.util.*;
 
-
-import static Assignment1.Block.mineBlock;
 import static Assignment1.Block.validateBlockchain;
 
 public class Main {

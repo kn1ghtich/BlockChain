@@ -4,6 +4,16 @@ import java.nio.charset.StandardCharsets;
 
 public class SHA256 {
 
+    /*
+    & - Is and
+    | - Is or
+    ^ - XOR
+    ~ - Not
+    << - Is left shift
+    >> - Is right shift
+    <<< - Unsigned left shift
+    >>> - Unsigned right shift
+     */
     // Constants defined in the SHA-256 algorithm (first 32 bits of the fractional parts of the square roots of the first 8 primes)
     private static final int[] H = {
             0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
