@@ -4,12 +4,13 @@ public class Transaction {
     String sender;
     String receiver;
     double amount;
+    String signature;
 
-
-    Transaction(String sender, String receiver, double amount) {
+    public Transaction(String sender, String receiver, double amount, String signature) {
         this.sender = sender;
         this.receiver = receiver;
         this.amount = amount;
+        this.signature = signature;
     }
 
     @Override
