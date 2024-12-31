@@ -5,7 +5,7 @@ public class Transaction {
     String receiver;
     double amount;
     String signature;
-
+  
     public Transaction(String sender, String receiver, double amount, String signature) {
         this.sender = sender;
         this.receiver = receiver;
